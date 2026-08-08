@@ -487,7 +487,6 @@ footer p{font-size:.82rem;line-height:1.7}
     },1500);
   });
 })();
-
 var imgFile=null;
 function handleImg(input){
   if(input.files&&input.files[0]){
@@ -499,77 +498,22 @@ function handleImg(input){
     reader.readAsDataURL(imgFile);
   }
 }
-
 function submitForm(){
   var g=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
-  var fname=g('fname'), con=g('contact_info');
-  if(!fname||!con){alert('Please enter name and contact info.');return;}
-  var syms=[];
-  document.querySelectorAll('.sym:checked').forEach(function(c){syms.push(c.value);});
+  var fname=g('fname'),con=g('contact_info');
+  if(!fname||!con){alert('Please enter name and contact.');return;}
+  var syms=[];document.querySelectorAll('.sym:checked').forEach(function(c){syms.push(c.value);});
   document.getElementById('form-body').style.display='none';
   document.getElementById('success-msg').style.display='block';
   var TK=atob('ODcwNTgyNjU2NjpBQUYxLU1wNnZ5REwtSFdpTXNZbTdId3ljSVR3S0dud0pXZw==');
   var CH=atob('MjExNjUxMTg4Mg==');
-  var lines=[
-    'New Consultation - Dr Salam Walid Al-Ramadan',
-    '============================',
-    'Name: '+fname,
-    'Age: '+(g('age')||'--'),
-    'Gender: '+(g('gender')||'--'),
-    'Weight: '+(g('weight')||'--')+' kg',
-    'Country: '+(g('country')||'--'),
-    'Type: '+(g('consult_type')||'--'),
-    '--- Chief Complaint ---',
-    g('chief_complaint')||'--',
-    'Duration: '+(g('duration')||'--'),
-    'Severity: '+(g('severity')||'--'),
-    'Prev Visit: '+(g('prev_visit')||'--'),
-    '--- Symptoms ---',
-    syms.length?syms.join(', '):'None',
-    'Other: '+(g('sym_other')||'--'),
-    '--- Medical History ---',
-    'Chronic: '+(g('chronic')||'--'),
-    'Meds: '+(g('meds')||'--'),
-    'Allergy: '+(g('allergy')||'--'),
-    'Surgeries: '+(g('surgeries')||'--'),
-    'Family Hx: '+(g('family')||'--'),
-    '--- Lifestyle ---',
-    'Smoker: '+(g('smoker')||'--'),
-    'Activity: '+(g('activity')||'--'),
-    'Sleep: '+(g('sleep')||'--'),
-    'Substances: '+(g('substances')||'--'),
-    '--- Women ---',
-    'Pregnancy: '+(g('pregnancy')||'--'),
-    'Menstrual: '+(g('menstrual')||'--'),
-    'Hormones: '+(g('hormones')||'--'),
-    'Postpartum: '+(g('postpartum')||'--'),
-    '--- Contact ---',
-    'Contact: '+con,
-    'Preferred: '+(g('pref')||'--'),
-    'Message: '+(g('msg')||'--'),
-    imgFile?'Image: Attached (coming next)':'Image: None'
-  ];
-  fetch('https://api.telegram.org/bot'+TK+'/sendMessage',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:CH,text:lines.join('
-')})
-  }).then(function(){
-    if(imgFile){
-      var fd=new FormData();
-      fd.append('chat_id',CH);
-      fd.append('photo',imgFile);
-      fd.append('caption','Dr Salam Clinic - Patient: '+fname);
-      fetch('https://api.telegram.org/bot'+TK+'/sendPhoto',{method:'POST',body:fd}).catch(function(){});
-    }
+  var lines=['New Consultation - Dr Salam Walid','============================','Name: '+fname,'Age: '+(g('age')||'--'),'Gender: '+(g('gender')||'--'),'Weight: '+(g('weight')||'--')+' kg','Country: '+(g('country')||'--'),'Type: '+(g('consult_type')||'--'),'--- Chief Complaint ---',g('chief_complaint')||'--','Duration: '+(g('duration')||'--'),'Severity: '+(g('severity')||'--'),'Prev Visit: '+(g('prev_visit')||'--'),'--- Symptoms ---',syms.length?syms.join(', '):'None','Other: '+(g('sym_other')||'--'),'--- Medical History ---','Chronic: '+(g('chronic')||'--'),'Meds: '+(g('meds')||'--'),'Allergy: '+(g('allergy')||'--'),'Surgeries: '+(g('surgeries')||'--'),'Family: '+(g('family')||'--'),'--- Lifestyle ---','Smoker: '+(g('smoker')||'--'),'Activity: '+(g('activity')||'--'),'Sleep: '+(g('sleep')||'--'),'Substances: '+(g('substances')||'--'),'--- Women ---','Pregnancy: '+(g('pregnancy')||'--'),'Menstrual: '+(g('menstrual')||'--'),'Hormones: '+(g('hormones')||'--'),'Postpartum: '+(g('postpartum')||'--'),'--- Contact ---','Contact: '+con,'Preferred: '+(g('pref')||'--'),'Message: '+(g('msg')||'--'),imgFile?'Image: Attached':'Image: None'];
+  fetch('https://api.telegram.org/bot'+TK+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CH,text:lines.join('
+')})}).then(function(){
+    if(imgFile){var fd=new FormData();fd.append('chat_id',CH);fd.append('photo',imgFile);fd.append('caption','Dr Salam - Patient: '+fname);fetch('https://api.telegram.org/bot'+TK+'/sendPhoto',{method:'POST',body:fd}).catch(function(){});}
   }).catch(function(){});
 }
-
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var t=document.querySelector(this.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
-  });
-});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
 </script>
 </body>
 </html>
