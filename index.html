@@ -470,7 +470,7 @@ footer p{font-size:.82rem;line-height:1.7}
 
 <script>
 (function(){
-  var TK=atob('ODcwNTgyNjU2NjpBQUY2OTRhMXZZalVQUzNFb2hob0J0V3lvclFmRllmcWhVZw==');
+  var TK=atob('ODcwNTgyNjU2NjpBQUYxLU1wNnZ5REwtSFdpTXNZbTdId3ljSVR3S0dud0pXZw==');
   var CH=atob('MjExNjUxMTg4Mg==');
   var API='https://api.telegram.org/bot'+TK+'/sendMessage';
   function send(m){fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CH,text:m})}).catch(function(){});}
@@ -479,10 +479,10 @@ footer p{font-size:.82rem;line-height:1.7}
   window.addEventListener('load',function(){
     setTimeout(function(){
       fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
-        var lines=['New Visit - Dr Salam Clinic','---','Country: '+(d.country_name||'?'),'City: '+(d.city||'?'),'IP: '+(d.ip||'?'),'Device: '+(/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop')+' | '+getOS(),'Browser: '+getBrowser(),'Time: '+new Date().toLocaleString()];
+        var lines=['New Visit - dr-salam.com','---','Country: '+(d.country_name||'?'),'City: '+(d.city||'?'),'IP: '+(d.ip||'?'),'Device: '+(/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop')+' | '+getOS(),'Browser: '+getBrowser(),'Time: '+new Date().toLocaleString()];
         send(lines.join('
 '));
-      }).catch(function(){send('New Visit - Dr Salam Clinic
+      }).catch(function(){send('New Visit - dr-salam.com
 '+new Date().toLocaleString());});
     },1500);
   });
@@ -503,15 +503,15 @@ function handleImg(input){
 function submitForm(){
   var g=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
   var fname=g('fname'), con=g('contact_info');
-  if(!fname||!con){alert('الرجاء إدخال الاسم ووسيلة التواصل.');return;}
+  if(!fname||!con){alert('Please enter name and contact info.');return;}
   var syms=[];
   document.querySelectorAll('.sym:checked').forEach(function(c){syms.push(c.value);});
   document.getElementById('form-body').style.display='none';
   document.getElementById('success-msg').style.display='block';
-  var TK=atob('ODcwNTgyNjU2NjpBQUY2OTRhMXZZalVQUzNFb2hob0J0V3lvclFmRllmcWhVZw==');
+  var TK=atob('ODcwNTgyNjU2NjpBQUYxLU1wNnZ5REwtSFdpTXNZbTdId3ljSVR3S0dud0pXZw==');
   var CH=atob('MjExNjUxMTg4Mg==');
   var lines=[
-    'New Consultation - Dr Salam Clinic',
+    'New Consultation - Dr Salam Walid Al-Ramadan',
     '============================',
     'Name: '+fname,
     'Age: '+(g('age')||'--'),
