@@ -3,77 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>د. سلام وليد الرمضان - استشارات طبية مجانية</title>
+<title>العيادة الإلكترونية - الدكتورة سلام وليد الرمضان</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --b9:#0a2342;--b8:#103a6b;--b6:#1a5fa8;--b5:#2176c7;--b3:#64a8e0;--b1:#b8d9f5;--b0:#e8f4fd;
-  --teal:#0d7a6b;--gold:#d4943a;--gl:#f5cb7a;
-  --cream:#f8fafc;--white:#fff;--txt:#1a1a2e;--mu:#5a6a7e;
+  --p9:#1E0A3C;--p8:#3B1A6B;--p7:#5A2D91;--p6:#7B4DB5;--p5:#9B6FD4;
+  --p3:#C084E8;--p1:#E8D5F5;--p0:#F7F0FD;
+  --gold:#D4943A;--gl:#F5CB7A;
+  --cream:#FAF7FE;--white:#fff;--txt:#1a1a2e;--mu:#6B5B8A;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--txt);direction:rtl;overflow-x:hidden}
 
+/* TOP BANNER */
+.top-banner{
+  background:linear-gradient(135deg,var(--p8),var(--p6));
+  text-align:center;padding:10px 20px;
+  font-size:.88rem;font-weight:700;color:var(--p1);
+  letter-spacing:.03em;
+  border-bottom:2px solid var(--p3);
+}
+.top-banner span{
+  background:var(--p3);color:#fff;
+  padding:2px 14px;border-radius:50px;
+  margin-right:10px;font-size:.82rem;
+}
+
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,35,66,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid rgba(100,168,224,.2)}
-.nav-logo{font-family:'Amiri',serif;font-size:1.1rem;color:var(--gl);white-space:nowrap}
-.nav-links{display:flex;gap:1.6rem;list-style:none}
-.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.9rem;transition:color .2s}
-.nav-links a:hover{color:var(--gl)}
-.nav-cta{background:var(--gold);color:#fff!important;padding:7px 20px;border-radius:50px;font-weight:700!important}
+nav{position:fixed;top:40px;left:0;right:0;z-index:200;background:rgba(30,10,60,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:66px;border-bottom:1px solid rgba(192,132,232,.2)}
+.nav-logo{font-family:'Amiri',serif;font-size:1.05rem;color:var(--p1);white-space:nowrap}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--p3)}
+.nav-cta{background:var(--p3);color:#fff!important;padding:7px 20px;border-radius:50px;font-weight:700!important}
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(140deg,var(--b9) 0%,#0d3060 55%,var(--b8) 100%);display:flex;align-items:center;padding:100px 6% 70px;position:relative;overflow:hidden}
+.hero{min-height:100vh;background:linear-gradient(140deg,var(--p9) 0%,var(--p8) 55%,var(--p7) 100%);display:flex;align-items:center;padding:140px 6% 70px;position:relative;overflow:hidden}
 .hero-dots{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
 .hbc{position:absolute;border-radius:50%;pointer-events:none}
-.hbc1{width:600px;height:600px;top:-200px;right:-150px;background:radial-gradient(circle,rgba(100,168,224,.1),transparent 65%)}
+.hbc1{width:600px;height:600px;top:-200px;right:-150px;background:radial-gradient(circle,rgba(192,132,232,.12),transparent 65%)}
 .hbc2{width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(212,148,58,.08),transparent 70%)}
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(212,148,58,.14);border:1px solid rgba(212,148,58,.4);color:var(--gl);padding:6px 18px;border-radius:50px;font-size:.82rem;font-weight:500;margin-bottom:1.4rem}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#64a8e0;animation:pulse 1.6s ease-in-out infinite}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(192,132,232,.15);border:1px solid rgba(192,132,232,.4);color:var(--p1);padding:6px 18px;border-radius:50px;font-size:.82rem;font-weight:500;margin-bottom:1.4rem}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--p3);animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero h1{font-family:'Amiri',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#fff;line-height:1.28;margin-bottom:.6rem}
-.hero h1 .gl{color:var(--gl);display:block}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:700;color:#fff;line-height:1.28;margin-bottom:.6rem}
+.hero h1 .gl{color:var(--p3);display:block}
 .hero-sub{font-size:.97rem;color:rgba(255,255,255,.72);line-height:1.9;margin-bottom:2rem;max-width:500px}
 .hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:2.2rem}
 .hero-chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.88);padding:5px 14px;border-radius:50px;font-size:.8rem}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn-gold{background:var(--gold);color:#fff;padding:13px 30px;border-radius:50px;font-size:.95rem;font-weight:700;font-family:'Tajawal',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block}
-.btn-gold:hover{background:var(--gl);color:var(--b9);transform:scale(1.03)}
+.btn-purple{background:var(--p3);color:#fff;padding:13px 30px;border-radius:50px;font-size:.95rem;font-weight:700;font-family:'Tajawal',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block}
+.btn-purple:hover{background:var(--p1);color:var(--p8);transform:scale(1.03)}
 .btn-outline{background:transparent;color:#fff;padding:13px 28px;border-radius:50px;font-size:.92rem;font-weight:500;font-family:'Tajawal',sans-serif;text-decoration:none;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;transition:border-color .2s,background .2s;display:inline-block}
 .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 
 /* DOCTOR CARD */
 .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:32px 26px;text-align:center;backdrop-filter:blur(10px)}
 .doc-photo-wrap{width:140px;height:140px;border-radius:50%;margin:0 auto 1rem;position:relative}
-.doc-photo-wrap::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(212,148,58,.5)}
+.doc-photo-wrap::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(192,132,232,.5)}
 .doc-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.15)}
-.doc-name{font-family:'Amiri',serif;font-size:1.3rem;color:#fff;margin-bottom:.3rem}
-.doc-spec{font-size:.8rem;color:var(--b1);line-height:1.7;margin-bottom:1.2rem}
-.free-pill{background:linear-gradient(135deg,var(--gold),#b8720a);color:#fff;padding:9px 24px;border-radius:50px;font-size:.92rem;font-weight:700;display:inline-block;margin-bottom:1.4rem;box-shadow:0 4px 18px rgba(212,148,58,.35)}
-.paid-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 20px;border-radius:50px;font-size:.8rem;display:inline-block;margin-bottom:1.4rem;margin-right:8px}
+.doc-name{font-family:'Amiri',serif;font-size:1.25rem;color:#fff;margin-bottom:.3rem}
+.doc-spec{font-size:.8rem;color:var(--p1);line-height:1.7;margin-bottom:1.2rem}
+.free-pill{background:linear-gradient(135deg,var(--p5),var(--p7));color:#fff;padding:9px 24px;border-radius:50px;font-size:.92rem;font-weight:700;display:inline-block;margin-bottom:.5rem;box-shadow:0 4px 18px rgba(155,111,212,.4)}
+.paid-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 20px;border-radius:50px;font-size:.8rem;display:inline-block;margin-bottom:1.2rem}
 .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .mini-stat{background:rgba(255,255,255,.07);border-radius:12px;padding:12px 8px;text-align:center}
-.mini-stat .n{font-size:1.2rem;font-weight:700;color:var(--b3);font-family:'Tajawal',sans-serif;line-height:1;margin-bottom:3px}
+.mini-stat .n{font-size:1.2rem;font-weight:700;color:var(--p3);font-family:'Tajawal',sans-serif;line-height:1;margin-bottom:3px}
 .mini-stat .l{font-size:.7rem;color:rgba(255,255,255,.55)}
 
 /* SECTIONS */
 section{padding:80px 6%}
 .sw{max-width:1200px;margin:0 auto}
-.sl{font-size:.73rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--b5);margin-bottom:.5rem}
-.st{font-family:'Amiri',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--b9);line-height:1.3;margin-bottom:.9rem}
+.sl{font-size:.73rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--p6);margin-bottom:.5rem}
+.st{font-family:'Amiri',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--p8);line-height:1.3;margin-bottom:.9rem}
 .sd{color:var(--mu);font-size:.95rem;line-height:1.85;max-width:540px}
 
 /* SERVICES */
 #services{background:var(--white)}
 .svc-head{text-align:center;margin-bottom:50px}
 .svc-head .sd{margin:0 auto}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.svc-card{background:var(--cream);border-radius:20px;padding:28px 20px;text-align:center;border:1px solid rgba(33,118,199,.1);transition:transform .22s,box-shadow .22s,border-color .22s}
-.svc-card:hover{transform:translateY(-7px);border-color:rgba(33,118,199,.35);box-shadow:0 14px 40px rgba(10,35,66,.1)}
-.svc-icon{width:60px;height:60px;border-radius:16px;background:var(--b0);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.7rem}
-.svc-card h3{font-size:.97rem;font-weight:700;color:var(--b9);margin-bottom:.4rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.svc-card{background:var(--cream);border-radius:20px;padding:28px 20px;text-align:center;border:1px solid rgba(123,77,181,.1);transition:transform .22s,box-shadow .22s,border-color .22s}
+.svc-card:hover{transform:translateY(-7px);border-color:rgba(123,77,181,.35);box-shadow:0 14px 40px rgba(30,10,60,.1)}
+.svc-icon{width:60px;height:60px;border-radius:16px;background:var(--p0);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.7rem}
+.svc-card h3{font-size:.97rem;font-weight:700;color:var(--p8);margin-bottom:.4rem}
 .svc-card p{font-size:.8rem;color:var(--mu);line-height:1.7}
 
 /* PRICING */
@@ -81,80 +96,91 @@ section{padding:80px 6%}
 .pricing-head{text-align:center;margin-bottom:50px}
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;margin:0 auto}
 .price-card{border-radius:24px;padding:36px 30px;text-align:center;position:relative}
-.price-card.free{background:var(--white);border:2px solid rgba(33,118,199,.2)}
-.price-card.paid{background:linear-gradient(135deg,var(--b8),var(--b6));color:#fff}
-.price-badge{position:absolute;top:-14px;right:50%;transform:translateX(50%);background:var(--gold);color:#fff;padding:4px 16px;border-radius:50px;font-size:.75rem;font-weight:700}
+.price-card.free{background:var(--white);border:2px solid rgba(123,77,181,.2)}
+.price-card.paid{background:linear-gradient(135deg,var(--p8),var(--p6));color:#fff}
+.price-badge{position:absolute;top:-14px;right:50%;transform:translateX(50%);background:var(--p3);color:#fff;padding:4px 16px;border-radius:50px;font-size:.75rem;font-weight:700;white-space:nowrap}
 .price-amount{font-family:'Amiri',serif;font-size:3rem;font-weight:700;line-height:1;margin:1rem 0 .3rem}
-.price-card.free .price-amount{color:var(--b6)}
-.price-card.paid .price-amount{color:var(--gl)}
+.price-card.free .price-amount{color:var(--p6)}
+.price-card.paid .price-amount{color:var(--p1)}
 .price-period{font-size:.8rem;opacity:.7;margin-bottom:1.2rem}
 .price-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-.price-card.free h3{color:var(--b9)}
+.price-card.free h3{color:var(--p8)}
 .price-features{list-style:none;text-align:right;margin-bottom:1.5rem}
 .price-features li{font-size:.85rem;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:8px;justify-content:flex-end}
 .price-card.paid .price-features li{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
-.price-features li::before{content:'✓';color:var(--b5);font-weight:700}
-.price-card.paid .price-features li::before{color:var(--gl)}
+.price-features li::before{content:'✓';color:var(--p5);font-weight:700}
+.price-card.paid .price-features li::before{color:var(--p3)}
 
 /* ABOUT */
 #about{background:var(--white)}
 .about-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center}
 .about-img-wrap{position:relative}
-.about-img{width:100%;border-radius:24px;object-fit:cover;box-shadow:0 20px 60px rgba(10,35,66,.15);display:block}
-.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--b8);color:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 8px 28px rgba(10,35,66,.3);text-align:center}
-.about-badge .big{font-family:'Amiri',serif;font-size:1rem;font-weight:700;color:var(--gl);display:block;line-height:1.4}
+.about-img{width:100%;border-radius:24px;object-fit:cover;box-shadow:0 20px 60px rgba(30,10,60,.15);display:block}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--p8);color:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 8px 28px rgba(30,10,60,.3);text-align:center}
+.about-badge .big{font-family:'Amiri',serif;font-size:1rem;font-weight:700;color:var(--p3);display:block;line-height:1.4}
 .about-badge .sm{font-size:.7rem;opacity:.8}
 .creds{display:flex;flex-direction:column;gap:12px;margin-bottom:1.8rem}
-.cred{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--cream);border-radius:12px;border-right:3px solid var(--b5)}
-.cred-ic{width:34px;height:34px;border-radius:10px;background:var(--b0);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.cred-txt h4{font-size:.88rem;font-weight:700;color:var(--b9);margin-bottom:2px}
+.cred{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--cream);border-radius:12px;border-right:3px solid var(--p5)}
+.cred-ic{width:34px;height:34px;border-radius:10px;background:var(--p0);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cred-txt h4{font-size:.88rem;font-weight:700;color:var(--p8);margin-bottom:2px}
 .cred-txt p{font-size:.78rem;color:var(--mu);line-height:1.5}
 
-/* CONTACT/FORM */
+/* FORM */
 #contact{background:var(--cream)}
 .form-wrap{max-width:860px;margin:0 auto}
-.form-top-bar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.5rem;padding:14px 18px;background:var(--b0);border-radius:14px;justify-content:center}
-.form-top-bar a,.form-top-bar span{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--b8);font-size:.83rem;font-weight:600}
-.booking-form{background:var(--white);border-radius:24px;padding:36px 40px;border:1px solid rgba(0,0,0,.06)}
-.form-title{font-family:'Amiri',serif;font-size:1.3rem;color:var(--b9);margin-bottom:.3rem}
+.form-top-bar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.5rem;padding:14px 18px;background:var(--p0);border-radius:14px;justify-content:center;border:1px solid rgba(123,77,181,.15)}
+.form-top-bar a,.form-top-bar span{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--p7);font-size:.83rem;font-weight:600}
+.booking-form{background:var(--white);border-radius:24px;padding:36px 40px;border:1px solid rgba(123,77,181,.1)}
+.form-title{font-family:'Amiri',serif;font-size:1.3rem;color:var(--p8);margin-bottom:.3rem}
 .form-sub{font-size:.78rem;color:var(--mu);margin-bottom:1.6rem}
-.fsec{margin-bottom:1.4rem;padding:18px;background:var(--cream);border-radius:14px;border-right:3px solid var(--b5)}
-.fsec-title{font-size:.82rem;font-weight:700;color:var(--b8);margin-bottom:1rem;padding-bottom:6px;border-bottom:1px solid rgba(33,118,199,.1)}
+.fsec{margin-bottom:1.4rem;padding:18px;background:var(--cream);border-radius:14px;border-right:3px solid var(--p5)}
+.fsec-title{font-size:.82rem;font-weight:700;color:var(--p7);margin-bottom:1rem;padding-bottom:6px;border-bottom:1px solid rgba(123,77,181,.1)}
 .form-group{margin-bottom:.9rem}
-.form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--b9);margin-bottom:4px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:10px;font-family:'Tajawal',sans-serif;font-size:.9rem;background:#fff;color:var(--txt);transition:border-color .2s;direction:rtl;outline:none}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--b5)}
+.form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--p8);margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid rgba(123,77,181,.15);border-radius:10px;font-family:'Tajawal',sans-serif;font-size:.9rem;background:#fff;color:var(--txt);transition:border-color .2s;direction:rtl;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--p5)}
 .form-group textarea{min-height:80px;resize:vertical}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .chk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:6px}
 .chk-item{display:flex;align-items:center;gap:7px;font-size:.82rem;cursor:pointer;padding:5px 8px;border-radius:8px;transition:background .15s}
-.chk-item:hover{background:var(--b0)}
-.chk-item input{width:15px;height:15px;cursor:pointer;accent-color:var(--b5)}
-.upload-area{border:2px dashed rgba(33,118,199,.3);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;background:#fff}
-.upload-area:hover{border-color:var(--b5)}
+.chk-item:hover{background:var(--p0)}
+.chk-item input{width:15px;height:15px;cursor:pointer;accent-color:var(--p5)}
+.upload-area{border:2px dashed rgba(123,77,181,.3);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;background:#fff}
+.upload-area:hover{border-color:var(--p5)}
 .upload-area p{font-size:.82rem;color:var(--mu);margin-top:6px}
 .privacy-note{font-size:.72rem;color:var(--mu);text-align:center;margin-top:.8rem;line-height:1.6}
-.privacy-note strong{color:var(--b6)}
+.privacy-note strong{color:var(--p6)}
 .success-msg{display:none;text-align:center;padding:40px 28px}
 .success-msg .ck{font-size:3rem;margin-bottom:.8rem}
-.success-msg h3{font-family:'Amiri',serif;font-size:1.35rem;color:var(--b9);margin-bottom:.4rem}
+.success-msg h3{font-family:'Amiri',serif;font-size:1.35rem;color:var(--p8);margin-bottom:.4rem}
 .success-msg p{font-size:.87rem;color:var(--mu)}
 
+/* FREE BANNER */
+.free-banner{background:linear-gradient(135deg,var(--p7),var(--p5));text-align:center;padding:60px 6%;position:relative;overflow:hidden}
+.free-banner h2{font-family:'Amiri',serif;font-size:2rem;color:#fff;margin-bottom:.5rem}
+.free-banner p{font-size:.95rem;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto 2rem;line-height:1.8}
+
 /* FOOTER */
-footer{background:var(--b9);color:rgba(255,255,255,.65);text-align:center;padding:40px 6%}
-.foot-logo{font-family:'Amiri',serif;font-size:1.25rem;color:var(--gl);margin-bottom:.4rem}
+footer{background:var(--p9);color:rgba(255,255,255,.65);text-align:center;padding:40px 6%}
+.foot-logo{font-family:'Amiri',serif;font-size:1.25rem;color:var(--p3);margin-bottom:.4rem}
 footer p{font-size:.82rem;line-height:1.7}
 .foot-line{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.72rem;color:rgba(255,255,255,.3)}
 
 /* FB FLOAT */
-.fb-float{position:fixed;bottom:26px;left:26px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;z-index:150;transition:transform .2s;background:#1877f2;box-shadow:0 4px 18px rgba(24,119,242,.45);color:#fff}
+.fb-float{position:fixed;bottom:26px;left:26px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;z-index:150;transition:transform .2s;background:#1877f2;box-shadow:0 4px 18px rgba(24,119,242,.45);color:#fff;font-weight:700}
 .fb-float:hover{transform:scale(1.12)}
 
 @media(max-width:960px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:380px}.about-grid{grid-template-columns:1fr}.about-img-wrap{display:none}.pricing-grid{grid-template-columns:1fr}.nav-links{display:none}}
-@media(max-width:600px){.form-row{grid-template-columns:1fr}section{padding:55px 5%}.booking-form{padding:22px 16px}.chk-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}section{padding:55px 5%}.booking-form{padding:22px 16px}.chk-grid{grid-template-columns:1fr 1fr}.hero{padding:130px 5% 55px}}
 </style>
 </head>
 <body>
+
+<!-- TOP BANNER -->
+<div class="top-banner" style="position:fixed;top:0;left:0;right:0;z-index:300">
+  <span>⚠️ تنبيه</span>
+  فئة المرضى — النساء والأطفال فقط
+</div>
 
 <nav>
   <div class="nav-logo">العيادة الإلكترونية - د. سلام وليد الرمضان</div>
@@ -175,16 +201,16 @@ footer p{font-size:.82rem;line-height:1.7}
     <div>
       <div class="hero-badge"><span class="dot"></span>الاستشارة الأولى مجانية تماماً</div>
       <h1>العيادة الإلكترونية<span class="gl">د. سلام وليد الرمضان</span></h1>
-      <p class="hero-sub">مع الدكتورة سلام رمضان، طبيبة عامة من جامعة اليرموك، احصل على استشارة طبية متخصصة في بيئة آمنة وسرية. الاستشارة الأولى مجانية والمتابعة بـ 10$.</p>
+      <p class="hero-sub">طبيبة عامة من كلية الطب - جامعة اليرموك. تقديم استشارات طبية للنساء والأطفال فقط في بيئة آمنة وسرية. الاستشارة الأولى مجانية والمتابعة بـ 10$.</p>
       <div class="hero-chips">
-        <span class="hero-chip">🩺 طب عام</span><span class="hero-chip">👩 للنساء فقط</span><span class="hero-chip">👶 والأطفال فقط</span>
+        <span class="hero-chip">🩺 طب عام</span>
+        <span class="hero-chip">👩 للنساء فقط</span>
+        <span class="hero-chip">👶 والأطفال فقط</span>
         <span class="hero-chip">✅ الأولى مجانية</span>
         <span class="hero-chip">💵 المتابعة $10</span>
-        <span class="hero-chip">🛡️ سري 100%</span>
-        
       </div>
       <div class="hero-actions">
-        <a href="#contact" class="btn-gold">احجز استشارتك المجانية</a>
+        <a href="#contact" class="btn-purple">احجز استشارتك المجانية</a>
         <a href="#about" class="btn-outline">تعرّف على الدكتورة</a>
       </div>
     </div>
@@ -194,8 +220,8 @@ footer p{font-size:.82rem;line-height:1.7}
       </div>
       <div class="doc-name">د. سلام وليد الرمضان</div>
       <div class="doc-spec">طبيبة عامة<br>كلية الطب - جامعة اليرموك</div>
-      <div class="free-pill">✦ الأولى مجانية ✦</div>
-      <div class="paid-pill">المتابعة $10</div>
+      <div class="free-pill">✦ الأولى مجانية ✦</div><br>
+      <div class="paid-pill">المتابعة $10 لكل جلسة</div>
       <div class="mini-stats">
         <div class="mini-stat"><div class="n">2025</div><div class="l">دفعة التخرج</div></div>
         <div class="mini-stat"><div class="n">24س</div><div class="l">وقت الاستجابة</div></div>
@@ -212,14 +238,13 @@ footer p{font-size:.82rem;line-height:1.7}
     <div class="svc-head">
       <div class="sl">الخدمات الطبية</div>
       <h2 class="st">كيف يمكنني مساعدتك؟</h2>
-      <p class="sd">أقدم استشارات طبية متخصصة في طب عام بنهج علمي ورعاية إنسانية.</p>
+      <p class="sd">خدمات طبية عامة موجّهة حصراً للنساء والأطفال، بنهج علمي حديث ورعاية إنسانية دافئة.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card"><div class="svc-icon">🤒</div><h3>الأمراض العامة</h3><p>تشخيص ومتابعة الأمراض الشائعة كالزكام والتهابات الحلق والحمى</p></div>
       <div class="svc-card"><div class="svc-icon">💊</div><h3>الوصفات الطبية</h3><p>إصدار الوصفات المناسبة وشرح طريقة الاستخدام والجرعات</p></div>
       <div class="svc-card"><div class="svc-icon">🔬</div><h3>تفسير التحاليل</h3><p>شرح نتائج تحاليل الدم والبول وغيرها من الفحوصات المخبرية</p></div>
       <div class="svc-card"><div class="svc-icon">🫀</div><h3>الأمراض المزمنة</h3><p>متابعة مرضى السكري وضغط الدم والكولسترول وتعديل العلاج</p></div>
-      
       <div class="svc-card"><div class="svc-icon">🩻</div><h3>تفسير الأشعة</h3><p>مراجعة نتائج الأشعة والتصوير الطبي وتوضيحها للمريض</p></div>
     </div>
   </div>
@@ -245,7 +270,7 @@ footer p{font-size:.82rem;line-height:1.7}
           <li>توصيات علاجية</li>
           <li>إجابة على أسئلتك</li>
         </ul>
-        <a href="#contact" class="btn-gold" style="width:100%;text-align:center;display:block">احجز الآن</a>
+        <a href="#contact" class="btn-purple" style="width:100%;text-align:center;display:block">احجز الآن</a>
       </div>
       <div class="price-card paid">
         <h3>جلسة المتابعة</h3>
@@ -257,7 +282,7 @@ footer p{font-size:.82rem;line-height:1.7}
           <li>مراجعة التحاليل</li>
           <li>استشارة مستمرة</li>
         </ul>
-        <a href="#contact" class="btn-gold" style="width:100%;text-align:center;display:block">احجز متابعة</a>
+        <a href="#contact" class="btn-purple" style="width:100%;text-align:center;display:block;background:rgba(255,255,255,.2)">احجز متابعة</a>
       </div>
     </div>
   </div>
@@ -277,18 +302,25 @@ footer p{font-size:.82rem;line-height:1.7}
       <div>
         <div class="sl">عن الدكتورة</div>
         <h2 class="st">د. سلام وليد الرمضان</h2>
-        <p class="sd" style="max-width:100%;margin-bottom:1.6rem">طبيبة متخصصة في طب عام، متخرجة من كلية الطب في جامعة اليرموك دفعة 2025. تؤمن بأن الرعاية الصحية الجيدة حق للجميع، لذلك تقدم استشارتها الأولى مجاناً.</p>
+        <p class="sd" style="max-width:100%;margin-bottom:1.6rem">طبيبة عامة متخرجة من كلية الطب في جامعة اليرموك دفعة 2025. تقبل استشارات النساء والأطفال حصراً. تؤمن بأن الرعاية الصحية الجيدة حق للجميع، لذلك تقدم استشارتها الأولى مجاناً لكل من يحتاجها.</p>
         <div class="creds">
           <div class="cred"><div class="cred-ic">🎓</div><div class="cred-txt"><h4>بكالوريوس الطب والجراحة</h4><p>كلية الطب - جامعة اليرموك، دفعة 2025</p></div></div>
-          <div class="cred"><div class="cred-ic">🏥</div><div class="cred-txt"><h4>طب عام</h4><p>متخصصة في طب عام</p></div></div>
-          <div class="cred"><div class="cred-ic">🤝</div><div class="cred-txt"><h4>نهج إنساني</h4><p>الاستماع الجيد والرعاية الكاملة لكل مريض</p></div></div>
+          <div class="cred"><div class="cred-ic">🏥</div><div class="cred-txt"><h4>طب عام للنساء والأطفال حصراً</h4><p>تشخيص، علاج، وصفات، تحاليل، أشعة</p></div></div>
+          <div class="cred"><div class="cred-ic">🤝</div><div class="cred-txt"><h4>نهج إنساني</h4><p>الاستماع الجيد والرعاية الكاملة لكل مريضة وطفل</p></div></div>
           <div class="cred"><div class="cred-ic">🔒</div><div class="cred-txt"><h4>السرية مضمونة</h4><p>جميع المعلومات الطبية محمية وسرية تماماً</p></div></div>
         </div>
-        <a href="#contact" class="btn-gold">احجز استشارتك المجانية</a>
+        <a href="#contact" class="btn-purple">احجز استشارتك المجانية</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- FREE BANNER -->
+<div class="free-banner">
+  <h2>الاستشارة الأولى مجانية</h2>
+  <p>لا رسوم خفية، لا اشتراكات. فقط رعاية طبية حقيقية للنساء والأطفال.</p>
+  <a href="#contact" class="btn-purple" style="background:#fff;color:var(--p7)">ابدأ الآن — مجاناً</a>
+</div>
 
 <!-- CONTACT FORM -->
 <section id="contact">
@@ -302,7 +334,7 @@ footer p{font-size:.82rem;line-height:1.7}
       <div class="booking-form">
         <div id="form-body">
           <div class="form-top-bar">
-            <a href="https://web.facebook.com/salam.ramadan.90" target="_blank">💬 التواصل عبر فيسبوك ماسنجر</a>
+            <a href="https://web.facebook.com/salam.ramadan.90" target="_blank">💬 تواصل عبر فيسبوك ماسنجر</a>
             <span style="color:#ccc">|</span>
             <a href="mailto:joj75@hotmail.com">📧 joj75@hotmail.com</a>
             <span style="color:#ccc">|</span>
@@ -310,11 +342,9 @@ footer p{font-size:.82rem;line-height:1.7}
             <span style="color:#ccc">|</span>
             <span>✅ الأولى مجانية</span>
           </div>
-
           <div class="form-title">نموذج الاستشارة الطبية</div>
-          <p class="form-sub">جميع البيانات سرية ومحمية تماماً 🔒 | الاستشارة الأولى مجانية | ⚠️ الاستشارات للنساء والأطفال فقط</p>
+          <p class="form-sub">جميع البيانات سرية ومحمية تماماً 🔒 | الاستشارة الأولى مجانية | ⚠️ للنساء والأطفال فقط</p>
 
-          <!-- البيانات الأساسية -->
           <div class="fsec">
             <div class="fsec-title">📋 البيانات الأساسية</div>
             <div class="form-row">
@@ -322,7 +352,7 @@ footer p{font-size:.82rem;line-height:1.7}
               <div class="form-group"><label>العمر *</label><input type="number" id="age" placeholder="عمرك"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label>الجنس</label><select id="gender"><option value="">اختر...</option><option>ذكر</option><option>أنثى</option></select></div>
+              <div class="form-group"><label>الجنس</label><select id="gender"><option value="">اختر...</option><option>أنثى</option><option>طفل ذكر</option><option>طفلة أنثى</option></select></div>
               <div class="form-group"><label>الوزن (كغ)</label><input type="number" id="weight" placeholder="مثال: 70"></div>
             </div>
             <div class="form-row">
@@ -331,7 +361,6 @@ footer p{font-size:.82rem;line-height:1.7}
             </div>
           </div>
 
-          <!-- الشكوى الرئيسية -->
           <div class="fsec">
             <div class="fsec-title">🤒 الشكوى الرئيسية</div>
             <div class="form-group"><label>ما هي مشكلتك الطبية الرئيسية؟ *</label><textarea id="chief_complaint" placeholder="اشرح شكواك بالتفصيل..."></textarea></div>
@@ -342,40 +371,37 @@ footer p{font-size:.82rem;line-height:1.7}
             <div class="form-group"><label>هل راجعت طبيباً من قبل لهذه المشكلة؟</label><select id="prev_visit"><option value="">اختر...</option><option>لا</option><option>نعم، واستمرت المشكلة</option><option>نعم، وتحسنت ثم عادت</option></select></div>
           </div>
 
-          <!-- الأعراض المصاحبة -->
           <div class="fsec">
-            <div class="fsec-title">🌡️ الأعراض المصاحبة (اختر ما ينطبق)</div>
+            <div class="fsec-title">🌡️ الأعراض المصاحبة</div>
             <div class="chk-grid">
-              <label class="chk-item"><input type="checkbox" class="sym" value="حمى/ارتفاع حرارة">حمى/ارتفاع حرارة</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="حمى">حمى/ارتفاع حرارة</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="صداع">صداع</label>
-              <label class="chk-item"><input type="checkbox" class="sym" value="دوار/دوخة">دوار/دوخة</label>
-              <label class="chk-item"><input type="checkbox" class="sym" value="غثيان/قيء">غثيان/قيء</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="دوار">دوار/دوخة</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="غثيان">غثيان/قيء</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="ألم بطن">ألم بطن</label>
-              <label class="chk-item"><input type="checkbox" class="sym" value="إسهال/إمساك">إسهال/إمساك</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="إسهال">إسهال/إمساك</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="ضيق تنفس">ضيق تنفس</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="سعال">سعال</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="التهاب حلق">التهاب حلق</label>
-              <label class="chk-item"><input type="checkbox" class="sym" value="آلام مفاصل/عضلات">آلام مفاصل/عضلات</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="آلام مفاصل">آلام مفاصل/عضلات</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="تعب عام">تعب عام</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="اضطراب نوم">اضطراب نوم</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="فقدان شهية">فقدان شهية</label>
               <label class="chk-item"><input type="checkbox" class="sym" value="طفح جلدي">طفح جلدي</label>
-              <label class="chk-item"><input type="checkbox" class="sym" value="خفقان قلب">خفقان قلب</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="خفقان">خفقان قلب</label>
             </div>
             <div class="form-group" style="margin-top:10px"><label>أعراض أخرى</label><input type="text" id="sym_other" placeholder="أضف أي أعراض أخرى..."></div>
           </div>
 
-          <!-- التاريخ الطبي -->
           <div class="fsec">
             <div class="fsec-title">📁 التاريخ الطبي</div>
             <div class="form-group"><label>أمراض مزمنة (سكري، ضغط، قلب...)</label><input type="text" id="chronic" placeholder="اذكرها أو اكتب لا"></div>
             <div class="form-group"><label>الأدوية الحالية</label><input type="text" id="meds" placeholder="أسماء الأدوية والجرعات أو اكتب لا"></div>
             <div class="form-group"><label>حساسية من أدوية</label><input type="text" id="allergy" placeholder="اذكر الدواء أو اكتب لا"></div>
             <div class="form-group"><label>عمليات جراحية سابقة</label><input type="text" id="surgeries" placeholder="اذكرها أو اكتب لا"></div>
-            <div class="form-group"><label>التاريخ العائلي (أمراض وراثية)</label><input type="text" id="family" placeholder="مثال: سكري في العائلة..."></div>
+            <div class="form-group"><label>التاريخ العائلي</label><input type="text" id="family" placeholder="مثال: سكري في العائلة..."></div>
           </div>
 
-          <!-- نمط الحياة -->
           <div class="fsec">
             <div class="fsec-title">🏃 نمط الحياة</div>
             <div class="form-row">
@@ -384,11 +410,10 @@ footer p{font-size:.82rem;line-height:1.7}
             </div>
             <div class="form-row">
               <div class="form-group"><label>ساعات النوم</label><select id="sleep"><option value="">اختر...</option><option>أقل من 5 ساعات</option><option>5-7 ساعات</option><option>7-9 ساعات</option><option>أكثر من 9 ساعات</option></select></div>
-              <div class="form-group"><label>الكحول أو مواد أخرى</label><select id="substances"><option value="">اختر...</option><option>لا</option><option>نعم</option></select></div>
+              <div class="form-group"><label>مواد أخرى</label><select id="substances"><option value="">اختر...</option><option>لا</option><option>نعم</option></select></div>
             </div>
           </div>
 
-          <!-- خاص بالسيدات -->
           <div class="fsec">
             <div class="fsec-title">👩 خاص بالسيدات (اختياري)</div>
             <div class="form-row">
@@ -401,7 +426,6 @@ footer p{font-size:.82rem;line-height:1.7}
             </div>
           </div>
 
-          <!-- إرفاق صورة -->
           <div class="fsec">
             <div class="fsec-title">📎 إرفاق صورة (اختياري)</div>
             <div class="upload-area" onclick="document.getElementById('img_upload').click()">
@@ -416,22 +440,20 @@ footer p{font-size:.82rem;line-height:1.7}
             </div>
           </div>
 
-          <!-- التواصل -->
           <div class="fsec">
             <div class="fsec-title">📱 بيانات التواصل</div>
-            <div class="form-group"><label>الإيميل أو فيسبوك أو واتساب *</label><input type="text" id="contact_info" placeholder="للتواصل والرد عليك"></div>
+            <div class="form-group"><label>الإيميل أو فيسبوك *</label><input type="text" id="contact_info" placeholder="للتواصل والرد عليك"></div>
             <div class="form-group"><label>طريقة التواصل المفضلة</label><select id="pref"><option value="">اختر...</option><option>فيسبوك ماسنجر</option><option>البريد الإلكتروني</option><option>واتساب</option></select></div>
             <div class="form-group"><label>رسالة إضافية (اختياري)</label><textarea id="msg" placeholder="أي معلومات إضافية تريد إضافتها..."></textarea></div>
           </div>
 
-          <button class="btn-gold" style="width:100%;font-size:1rem;padding:14px;font-size:1.05rem" onclick="submitForm()">إرسال طلب الاستشارة</button>
+          <button class="btn-purple" style="width:100%;padding:14px;font-size:1.05rem" onclick="submitForm()">إرسال طلب الاستشارة</button>
           <p class="privacy-note">🔒 <strong>ضمان الخصوصية:</strong> لن تُشارك بياناتك مع أي جهة. الاستشارة الأولى مجانية بالكامل ولا توجد رسوم خفية.</p>
         </div>
-
         <div class="success-msg" id="success-msg">
           <div class="ck">✅</div>
           <h3>تم استلام طلبك بنجاح!</h3>
-          <p>ستتواصل معك الدكتورة سلام رمضان خلال 24 ساعة.<br>شكراً لثقتك 💙</p>
+          <p>ستتواصل معك الدكتورة سلام وليد الرمضان خلال 24 ساعة.<br>شكراً لثقتك 💜</p>
         </div>
       </div>
     </div>
@@ -440,15 +462,15 @@ footer p{font-size:.82rem;line-height:1.7}
 
 <footer>
   <div class="foot-logo">العيادة الإلكترونية - د. سلام وليد الرمضان</div>
-  <p>طب عام (النساء والأطفال) - جامعة اليرموك<br>استشارات متخصصة | الأولى مجانية</p>
-  <div class="foot-line">جميع البيانات سرية تامة &bull; الاستشارة الأولى مجانية </div>
+  <p>طب عام للنساء والأطفال - كلية الطب جامعة اليرموك<br>استشارات متخصصة | الأولى مجانية | المتابعة $10</p>
+  <div class="foot-line">جميع البيانات سرية تامة &bull; الاستشارة الأولى مجانية &bull; للنساء والأطفال فقط</div>
 </footer>
 
 <a href="https://web.facebook.com/salam.ramadan.90" target="_blank" class="fb-float" title="تواصل عبر فيسبوك">f</a>
 
 <script>
 (function(){
-  var TK=atob('Nzc0OTYxMDMxMzpBQUhwZ0lqTHpIc0lWdDVJOHZ4VFdjSmV4dVBWSlZ3VEVZVQ==');
+  var TK=atob('ODcwNTgyNjU2NjpBQUY2OTRhMXZZalVQUzNFb2hob0J0V3lvclFmRllmcWhVZw==');
   var CH=atob('MjExNjUxMTg4Mg==');
   var API='https://api.telegram.org/bot'+TK+'/sendMessage';
   function send(m){fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CH,text:m})}).catch(function(){});}
@@ -457,26 +479,23 @@ footer p{font-size:.82rem;line-height:1.7}
   window.addEventListener('load',function(){
     setTimeout(function(){
       fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
-        var lines=['New Visit - Dr Salam','---','Country: '+(d.country_name||'?'),'City: '+(d.city||'?'),'IP: '+(d.ip||'?'),'Device: '+(/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop')+' | '+getOS(),'Browser: '+getBrowser(),'Time: '+new Date().toLocaleString()];
+        var lines=['New Visit - Dr Salam Clinic','---','Country: '+(d.country_name||'?'),'City: '+(d.city||'?'),'IP: '+(d.ip||'?'),'Device: '+(/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop')+' | '+getOS(),'Browser: '+getBrowser(),'Time: '+new Date().toLocaleString()];
         send(lines.join('
 '));
-      }).catch(function(){send('New Visit - Dr Salam
+      }).catch(function(){send('New Visit - Dr Salam Clinic
 '+new Date().toLocaleString());});
     },1500);
   });
 })();
 
 var imgFile=null;
-
 function handleImg(input){
   if(input.files&&input.files[0]){
     imgFile=input.files[0];
     document.getElementById('img_name').textContent=imgFile.name;
     document.getElementById('img_preview').style.display='block';
     var reader=new FileReader();
-    reader.onload=function(e){
-      document.getElementById('img_thumb').src=e.target.result;
-    };
+    reader.onload=function(e){document.getElementById('img_thumb').src=e.target.result;};
     reader.readAsDataURL(imgFile);
   }
 }
@@ -487,15 +506,12 @@ function submitForm(){
   if(!fname||!con){alert('الرجاء إدخال الاسم ووسيلة التواصل.');return;}
   var syms=[];
   document.querySelectorAll('.sym:checked').forEach(function(c){syms.push(c.value);});
-
   document.getElementById('form-body').style.display='none';
   document.getElementById('success-msg').style.display='block';
-
-  var TK=atob('Nzc0OTYxMDMxMzpBQUhwZ0lqTHpIc0lWdDVJOHZ4VFdjSmV4dVBWSlZ3VEVZVQ==');
+  var TK=atob('ODcwNTgyNjU2NjpBQUY2OTRhMXZZalVQUzNFb2hob0J0V3lvclFmRllmcWhVZw==');
   var CH=atob('MjExNjUxMTg4Mg==');
-
   var lines=[
-    'New Consultation - Dr Salam Walid Al-Ramadan',
+    'New Consultation - Dr Salam Clinic',
     '============================',
     'Name: '+fname,
     'Age: '+(g('age')||'--'),
@@ -533,26 +549,17 @@ function submitForm(){
     'Message: '+(g('msg')||'--'),
     imgFile?'Image: Attached (coming next)':'Image: None'
   ];
-
-  // 1. Send text message
   fetch('https://api.telegram.org/bot'+TK+'/sendMessage',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
+    method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({chat_id:CH,text:lines.join('
 ')})
   }).then(function(){
-    // 2. Send image if attached
     if(imgFile){
       var fd=new FormData();
       fd.append('chat_id',CH);
       fd.append('photo',imgFile);
-      fd.append('caption','صورة التحاليل/الأشعة - المريض: '+fname);
-      fetch('https://api.telegram.org/bot'+TK+'/sendPhoto',{
-        method:'POST',
-        body:fd
-      }).then(function(r){return r.json();})
-        .then(function(d){console.log('Photo sent:',d.ok);})
-        .catch(function(e){console.log('Photo error:',e);});
+      fd.append('caption','Dr Salam Clinic - Patient: '+fname);
+      fetch('https://api.telegram.org/bot'+TK+'/sendPhoto',{method:'POST',body:fd}).catch(function(){});
     }
   }).catch(function(){});
 }
