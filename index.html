@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>د. سلام وليد الرمضان - استشارات طبية مجانية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --b9:#0a2342;--b8:#103a6b;--b6:#1a5fa8;--b5:#2176c7;--b3:#64a8e0;--b1:#b8d9f5;--b0:#e8f4fd;
+  --teal:#0d7a6b;--gold:#d4943a;--gl:#f5cb7a;
+  --cream:#f8fafc;--white:#fff;--txt:#1a1a2e;--mu:#5a6a7e;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--cream);color:var(--txt);direction:rtl;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,35,66,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;border-bottom:1px solid rgba(100,168,224,.2)}
+.nav-logo{font-family:'Amiri',serif;font-size:1.1rem;color:var(--gl);white-space:nowrap}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:var(--gl)}
+.nav-cta{background:var(--gold);color:#fff!important;padding:7px 20px;border-radius:50px;font-weight:700!important}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(140deg,var(--b9) 0%,#0d3060 55%,var(--b8) 100%);display:flex;align-items:center;padding:100px 6% 70px;position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.hbc{position:absolute;border-radius:50%;pointer-events:none}
+.hbc1{width:600px;height:600px;top:-200px;right:-150px;background:radial-gradient(circle,rgba(100,168,224,.1),transparent 65%)}
+.hbc2{width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(212,148,58,.08),transparent 70%)}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(212,148,58,.14);border:1px solid rgba(212,148,58,.4);color:var(--gl);padding:6px 18px;border-radius:50px;font-size:.82rem;font-weight:500;margin-bottom:1.4rem}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#64a8e0;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#fff;line-height:1.28;margin-bottom:.6rem}
+.hero h1 .gl{color:var(--gl);display:block}
+.hero-sub{font-size:.97rem;color:rgba(255,255,255,.72);line-height:1.9;margin-bottom:2rem;max-width:500px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:2.2rem}
+.hero-chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.88);padding:5px 14px;border-radius:50px;font-size:.8rem}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:#fff;padding:13px 30px;border-radius:50px;font-size:.95rem;font-weight:700;font-family:'Tajawal',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-block}
+.btn-gold:hover{background:var(--gl);color:var(--b9);transform:scale(1.03)}
+.btn-outline{background:transparent;color:#fff;padding:13px 28px;border-radius:50px;font-size:.92rem;font-weight:500;font-family:'Tajawal',sans-serif;text-decoration:none;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;transition:border-color .2s,background .2s;display:inline-block}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* DOCTOR CARD */
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:32px 26px;text-align:center;backdrop-filter:blur(10px)}
+.doc-photo-wrap{width:140px;height:140px;border-radius:50%;margin:0 auto 1rem;position:relative}
+.doc-photo-wrap::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(212,148,58,.5)}
+.doc-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.15)}
+.doc-name{font-family:'Amiri',serif;font-size:1.3rem;color:#fff;margin-bottom:.3rem}
+.doc-spec{font-size:.8rem;color:var(--b1);line-height:1.7;margin-bottom:1.2rem}
+.free-pill{background:linear-gradient(135deg,var(--gold),#b8720a);color:#fff;padding:9px 24px;border-radius:50px;font-size:.92rem;font-weight:700;display:inline-block;margin-bottom:1.4rem;box-shadow:0 4px 18px rgba(212,148,58,.35)}
+.paid-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 20px;border-radius:50px;font-size:.8rem;display:inline-block;margin-bottom:1.4rem;margin-right:8px}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini-stat{background:rgba(255,255,255,.07);border-radius:12px;padding:12px 8px;text-align:center}
+.mini-stat .n{font-size:1.2rem;font-weight:700;color:var(--b3);font-family:'Tajawal',sans-serif;line-height:1;margin-bottom:3px}
+.mini-stat .l{font-size:.7rem;color:rgba(255,255,255,.55)}
+
+/* SECTIONS */
+section{padding:80px 6%}
+.sw{max-width:1200px;margin:0 auto}
+.sl{font-size:.73rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--b5);margin-bottom:.5rem}
+.st{font-family:'Amiri',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--b9);line-height:1.3;margin-bottom:.9rem}
+.sd{color:var(--mu);font-size:.95rem;line-height:1.85;max-width:540px}
+
+/* SERVICES */
+#services{background:var(--white)}
+.svc-head{text-align:center;margin-bottom:50px}
+.svc-head .sd{margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.svc-card{background:var(--cream);border-radius:20px;padding:28px 20px;text-align:center;border:1px solid rgba(33,118,199,.1);transition:transform .22s,box-shadow .22s,border-color .22s}
+.svc-card:hover{transform:translateY(-7px);border-color:rgba(33,118,199,.35);box-shadow:0 14px 40px rgba(10,35,66,.1)}
+.svc-icon{width:60px;height:60px;border-radius:16px;background:var(--b0);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.7rem}
+.svc-card h3{font-size:.97rem;font-weight:700;color:var(--b9);margin-bottom:.4rem}
+.svc-card p{font-size:.8rem;color:var(--mu);line-height:1.7}
+
+/* PRICING */
+#pricing{background:var(--cream)}
+.pricing-head{text-align:center;margin-bottom:50px}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:700px;margin:0 auto}
+.price-card{border-radius:24px;padding:36px 30px;text-align:center;position:relative}
+.price-card.free{background:var(--white);border:2px solid rgba(33,118,199,.2)}
+.price-card.paid{background:linear-gradient(135deg,var(--b8),var(--b6));color:#fff}
+.price-badge{position:absolute;top:-14px;right:50%;transform:translateX(50%);background:var(--gold);color:#fff;padding:4px 16px;border-radius:50px;font-size:.75rem;font-weight:700}
+.price-amount{font-family:'Amiri',serif;font-size:3rem;font-weight:700;line-height:1;margin:1rem 0 .3rem}
+.price-card.free .price-amount{color:var(--b6)}
+.price-card.paid .price-amount{color:var(--gl)}
+.price-period{font-size:.8rem;opacity:.7;margin-bottom:1.2rem}
+.price-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.price-card.free h3{color:var(--b9)}
+.price-features{list-style:none;text-align:right;margin-bottom:1.5rem}
+.price-features li{font-size:.85rem;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.price-card.paid .price-features li{border-color:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
+.price-features li::before{content:'✓';color:var(--b5);font-weight:700}
+.price-card.paid .price-features li::before{color:var(--gl)}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;border-radius:24px;object-fit:cover;box-shadow:0 20px 60px rgba(10,35,66,.15);display:block}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--b8);color:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 8px 28px rgba(10,35,66,.3);text-align:center}
+.about-badge .big{font-family:'Amiri',serif;font-size:1rem;font-weight:700;color:var(--gl);display:block;line-height:1.4}
+.about-badge .sm{font-size:.7rem;opacity:.8}
+.creds{display:flex;flex-direction:column;gap:12px;margin-bottom:1.8rem}
+.cred{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--cream);border-radius:12px;border-right:3px solid var(--b5)}
+.cred-ic{width:34px;height:34px;border-radius:10px;background:var(--b0);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.cred-txt h4{font-size:.88rem;font-weight:700;color:var(--b9);margin-bottom:2px}
+.cred-txt p{font-size:.78rem;color:var(--mu);line-height:1.5}
+
+/* CONTACT/FORM */
+#contact{background:var(--cream)}
+.form-wrap{max-width:860px;margin:0 auto}
+.form-top-bar{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.5rem;padding:14px 18px;background:var(--b0);border-radius:14px;justify-content:center}
+.form-top-bar a,.form-top-bar span{display:flex;align-items:center;gap:7px;text-decoration:none;color:var(--b8);font-size:.83rem;font-weight:600}
+.booking-form{background:var(--white);border-radius:24px;padding:36px 40px;border:1px solid rgba(0,0,0,.06)}
+.form-title{font-family:'Amiri',serif;font-size:1.3rem;color:var(--b9);margin-bottom:.3rem}
+.form-sub{font-size:.78rem;color:var(--mu);margin-bottom:1.6rem}
+.fsec{margin-bottom:1.4rem;padding:18px;background:var(--cream);border-radius:14px;border-right:3px solid var(--b5)}
+.fsec-title{font-size:.82rem;font-weight:700;color:var(--b8);margin-bottom:1rem;padding-bottom:6px;border-bottom:1px solid rgba(33,118,199,.1)}
+.form-group{margin-bottom:.9rem}
+.form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--b9);margin-bottom:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:10px;font-family:'Tajawal',sans-serif;font-size:.9rem;background:#fff;color:var(--txt);transition:border-color .2s;direction:rtl;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--b5)}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-top:6px}
+.chk-item{display:flex;align-items:center;gap:7px;font-size:.82rem;cursor:pointer;padding:5px 8px;border-radius:8px;transition:background .15s}
+.chk-item:hover{background:var(--b0)}
+.chk-item input{width:15px;height:15px;cursor:pointer;accent-color:var(--b5)}
+.upload-area{border:2px dashed rgba(33,118,199,.3);border-radius:12px;padding:20px;text-align:center;cursor:pointer;transition:border-color .2s;background:#fff}
+.upload-area:hover{border-color:var(--b5)}
+.upload-area p{font-size:.82rem;color:var(--mu);margin-top:6px}
+.privacy-note{font-size:.72rem;color:var(--mu);text-align:center;margin-top:.8rem;line-height:1.6}
+.privacy-note strong{color:var(--b6)}
+.success-msg{display:none;text-align:center;padding:40px 28px}
+.success-msg .ck{font-size:3rem;margin-bottom:.8rem}
+.success-msg h3{font-family:'Amiri',serif;font-size:1.35rem;color:var(--b9);margin-bottom:.4rem}
+.success-msg p{font-size:.87rem;color:var(--mu)}
+
+/* FOOTER */
+footer{background:var(--b9);color:rgba(255,255,255,.65);text-align:center;padding:40px 6%}
+.foot-logo{font-family:'Amiri',serif;font-size:1.25rem;color:var(--gl);margin-bottom:.4rem}
+footer p{font-size:.82rem;line-height:1.7}
+.foot-line{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.72rem;color:rgba(255,255,255,.3)}
+
+/* FB FLOAT */
+.fb-float{position:fixed;bottom:26px;left:26px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;z-index:150;transition:transform .2s;background:#1877f2;box-shadow:0 4px 18px rgba(24,119,242,.45);color:#fff}
+.fb-float:hover{transform:scale(1.12)}
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:380px}.about-grid{grid-template-columns:1fr}.about-img-wrap{display:none}.pricing-grid{grid-template-columns:1fr}.nav-links{display:none}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}section{padding:55px 5%}.booking-form{padding:22px 16px}.chk-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">العيادة الإلكترونية - د. سلام وليد الرمضان</div>
+  <ul class="nav-links">
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#pricing">الأسعار</a></li>
+    <li><a href="#about">عن الدكتورة</a></li>
+    <li><a href="#contact" class="nav-cta">احجز مجاناً</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hbc hbc1"></div>
+  <div class="hbc hbc2"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span>الاستشارة الأولى مجانية تماماً</div>
+      <h1>العيادة الإلكترونية<span class="gl">د. سلام وليد الرمضان</span></h1>
+      <p class="hero-sub">مع الدكتورة سلام رمضان، طبيبة عامة من جامعة اليرموك، احصل على استشارة طبية متخصصة في بيئة آمنة وسرية. الاستشارة الأولى مجانية والمتابعة بـ 10$.</p>
+      <div class="hero-chips">
+        <span class="hero-chip">🩺 طب عام</span><span class="hero-chip">👩 للنساء فقط</span><span class="hero-chip">👶 والأطفال فقط</span>
+        <span class="hero-chip">✅ الأولى مجانية</span>
+        <span class="hero-chip">💵 المتابعة $10</span>
+        <span class="hero-chip">🛡️ سري 100%</span>
+        
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">احجز استشارتك المجانية</a>
+        <a href="#about" class="btn-outline">تعرّف على الدكتورة</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="doc-photo-wrap">
+        <img class="doc-photo" src="data:image/jpeg;base64,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" alt="د. سلام وليد الرمضان">
+      </div>
+      <div class="doc-name">د. سلام وليد الرمضان</div>
+      <div class="doc-spec">طبيبة عامة<br>كلية الطب - جامعة اليرموك</div>
+      <div class="free-pill">✦ الأولى مجانية ✦</div>
+      <div class="paid-pill">المتابعة $10</div>
+      <div class="mini-stats">
+        <div class="mini-stat"><div class="n">2025</div><div class="l">دفعة التخرج</div></div>
+        <div class="mini-stat"><div class="n">24س</div><div class="l">وقت الاستجابة</div></div>
+        <div class="mini-stat"><div class="n">$0</div><div class="l">الاستشارة الأولى</div></div>
+        <div class="mini-stat"><div class="n">$10</div><div class="l">المتابعة</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sw">
+    <div class="svc-head">
+      <div class="sl">الخدمات الطبية</div>
+      <h2 class="st">كيف يمكنني مساعدتك؟</h2>
+      <p class="sd">أقدم استشارات طبية متخصصة في طب عام بنهج علمي ورعاية إنسانية.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">🤒</div><h3>الأمراض العامة</h3><p>تشخيص ومتابعة الأمراض الشائعة كالزكام والتهابات الحلق والحمى</p></div>
+      <div class="svc-card"><div class="svc-icon">💊</div><h3>الوصفات الطبية</h3><p>إصدار الوصفات المناسبة وشرح طريقة الاستخدام والجرعات</p></div>
+      <div class="svc-card"><div class="svc-icon">🔬</div><h3>تفسير التحاليل</h3><p>شرح نتائج تحاليل الدم والبول وغيرها من الفحوصات المخبرية</p></div>
+      <div class="svc-card"><div class="svc-icon">🫀</div><h3>الأمراض المزمنة</h3><p>متابعة مرضى السكري وضغط الدم والكولسترول وتعديل العلاج</p></div>
+      
+      <div class="svc-card"><div class="svc-icon">🩻</div><h3>تفسير الأشعة</h3><p>مراجعة نتائج الأشعة والتصوير الطبي وتوضيحها للمريض</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="sw">
+    <div class="pricing-head">
+      <div class="sl">الأسعار</div>
+      <h2 class="st">شفافية تامة في الأسعار</h2>
+      <p class="sd" style="margin:0 auto">لا رسوم خفية، لا مفاجآت. الأولى مجانية دائماً.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card free">
+        <div class="price-badge">ابدأ هنا</div>
+        <h3>الاستشارة الأولى</h3>
+        <div class="price-amount">$0</div>
+        <div class="price-period">مجانية تماماً</div>
+        <ul class="price-features">
+          <li>تقييم شامل للحالة</li>
+          <li>تشخيص أولي</li>
+          <li>توصيات علاجية</li>
+          <li>إجابة على أسئلتك</li>
+        </ul>
+        <a href="#contact" class="btn-gold" style="width:100%;text-align:center;display:block">احجز الآن</a>
+      </div>
+      <div class="price-card paid">
+        <h3>جلسة المتابعة</h3>
+        <div class="price-amount">$10</div>
+        <div class="price-period">لكل جلسة متابعة</div>
+        <ul class="price-features">
+          <li>متابعة الحالة</li>
+          <li>تعديل العلاج</li>
+          <li>مراجعة التحاليل</li>
+          <li>استشارة مستمرة</li>
+        </ul>
+        <a href="#contact" class="btn-gold" style="width:100%;text-align:center;display:block">احجز متابعة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sw">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img class="about-img" src="data:image/jpeg;base64,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" alt="د. سلام وليد الرمضان">
+        <div class="about-badge">
+          <span class="big">جامعة اليرموك</span>
+          <span class="sm">كلية الطب البشري</span>
+        </div>
+      </div>
+      <div>
+        <div class="sl">عن الدكتورة</div>
+        <h2 class="st">د. سلام وليد الرمضان</h2>
+        <p class="sd" style="max-width:100%;margin-bottom:1.6rem">طبيبة متخصصة في طب عام، متخرجة من كلية الطب في جامعة اليرموك دفعة 2025. تؤمن بأن الرعاية الصحية الجيدة حق للجميع، لذلك تقدم استشارتها الأولى مجاناً.</p>
+        <div class="creds">
+          <div class="cred"><div class="cred-ic">🎓</div><div class="cred-txt"><h4>بكالوريوس الطب والجراحة</h4><p>كلية الطب - جامعة اليرموك، دفعة 2025</p></div></div>
+          <div class="cred"><div class="cred-ic">🏥</div><div class="cred-txt"><h4>طب عام</h4><p>متخصصة في طب عام</p></div></div>
+          <div class="cred"><div class="cred-ic">🤝</div><div class="cred-txt"><h4>نهج إنساني</h4><p>الاستماع الجيد والرعاية الكاملة لكل مريض</p></div></div>
+          <div class="cred"><div class="cred-ic">🔒</div><div class="cred-txt"><h4>السرية مضمونة</h4><p>جميع المعلومات الطبية محمية وسرية تماماً</p></div></div>
+        </div>
+        <a href="#contact" class="btn-gold">احجز استشارتك المجانية</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
+  <div class="sw">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="sl">التواصل</div>
+      <h2 class="st">احجز استشارتك</h2>
+      <p class="sd" style="margin:0 auto">أرسل بياناتك وستتواصل معك الدكتورة سلام في أقرب وقت ممكن.</p>
+    </div>
+    <div class="form-wrap">
+      <div class="booking-form">
+        <div id="form-body">
+          <div class="form-top-bar">
+            <a href="https://web.facebook.com/salam.ramadan.90" target="_blank">💬 التواصل عبر فيسبوك ماسنجر</a>
+            <span style="color:#ccc">|</span>
+            <a href="mailto:joj75@hotmail.com">📧 joj75@hotmail.com</a>
+            <span style="color:#ccc">|</span>
+            <span>🕐 رد خلال 24 ساعة</span>
+            <span style="color:#ccc">|</span>
+            <span>✅ الأولى مجانية</span>
+          </div>
+
+          <div class="form-title">نموذج الاستشارة الطبية</div>
+          <p class="form-sub">جميع البيانات سرية ومحمية تماماً 🔒 | الاستشارة الأولى مجانية | ⚠️ الاستشارات للنساء والأطفال فقط</p>
+
+          <!-- البيانات الأساسية -->
+          <div class="fsec">
+            <div class="fsec-title">📋 البيانات الأساسية</div>
+            <div class="form-row">
+              <div class="form-group"><label>الاسم الأول *</label><input type="text" id="fname" placeholder="اسمك"></div>
+              <div class="form-group"><label>العمر *</label><input type="number" id="age" placeholder="عمرك"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>الجنس</label><select id="gender"><option value="">اختر...</option><option>ذكر</option><option>أنثى</option></select></div>
+              <div class="form-group"><label>الوزن (كغ)</label><input type="number" id="weight" placeholder="مثال: 70"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>الدولة</label><input type="text" id="country" placeholder="دولتك"></div>
+              <div class="form-group"><label>نوع الاستشارة</label><select id="consult_type"><option value="">اختر...</option><option>استشارة أولى (مجانية)</option><option>متابعة ($10)</option></select></div>
+            </div>
+          </div>
+
+          <!-- الشكوى الرئيسية -->
+          <div class="fsec">
+            <div class="fsec-title">🤒 الشكوى الرئيسية</div>
+            <div class="form-group"><label>ما هي مشكلتك الطبية الرئيسية؟ *</label><textarea id="chief_complaint" placeholder="اشرح شكواك بالتفصيل..."></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><label>منذ متى؟</label><input type="text" id="duration" placeholder="مثال: 3 أيام، أسبوع..."></div>
+              <div class="form-group"><label>شدة الألم (1-10)</label><select id="severity"><option value="">اختر...</option><option>1-3 خفيف</option><option>4-6 متوسط</option><option>7-9 شديد</option><option>10 لا أحتمل</option></select></div>
+            </div>
+            <div class="form-group"><label>هل راجعت طبيباً من قبل لهذه المشكلة؟</label><select id="prev_visit"><option value="">اختر...</option><option>لا</option><option>نعم، واستمرت المشكلة</option><option>نعم، وتحسنت ثم عادت</option></select></div>
+          </div>
+
+          <!-- الأعراض المصاحبة -->
+          <div class="fsec">
+            <div class="fsec-title">🌡️ الأعراض المصاحبة (اختر ما ينطبق)</div>
+            <div class="chk-grid">
+              <label class="chk-item"><input type="checkbox" class="sym" value="حمى/ارتفاع حرارة">حمى/ارتفاع حرارة</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="صداع">صداع</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="دوار/دوخة">دوار/دوخة</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="غثيان/قيء">غثيان/قيء</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="ألم بطن">ألم بطن</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="إسهال/إمساك">إسهال/إمساك</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="ضيق تنفس">ضيق تنفس</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="سعال">سعال</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="التهاب حلق">التهاب حلق</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="آلام مفاصل/عضلات">آلام مفاصل/عضلات</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="تعب عام">تعب عام</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="اضطراب نوم">اضطراب نوم</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="فقدان شهية">فقدان شهية</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="طفح جلدي">طفح جلدي</label>
+              <label class="chk-item"><input type="checkbox" class="sym" value="خفقان قلب">خفقان قلب</label>
+            </div>
+            <div class="form-group" style="margin-top:10px"><label>أعراض أخرى</label><input type="text" id="sym_other" placeholder="أضف أي أعراض أخرى..."></div>
+          </div>
+
+          <!-- التاريخ الطبي -->
+          <div class="fsec">
+            <div class="fsec-title">📁 التاريخ الطبي</div>
+            <div class="form-group"><label>أمراض مزمنة (سكري، ضغط، قلب...)</label><input type="text" id="chronic" placeholder="اذكرها أو اكتب لا"></div>
+            <div class="form-group"><label>الأدوية الحالية</label><input type="text" id="meds" placeholder="أسماء الأدوية والجرعات أو اكتب لا"></div>
+            <div class="form-group"><label>حساسية من أدوية</label><input type="text" id="allergy" placeholder="اذكر الدواء أو اكتب لا"></div>
+            <div class="form-group"><label>عمليات جراحية سابقة</label><input type="text" id="surgeries" placeholder="اذكرها أو اكتب لا"></div>
+            <div class="form-group"><label>التاريخ العائلي (أمراض وراثية)</label><input type="text" id="family" placeholder="مثال: سكري في العائلة..."></div>
+          </div>
+
+          <!-- نمط الحياة -->
+          <div class="fsec">
+            <div class="fsec-title">🏃 نمط الحياة</div>
+            <div class="form-row">
+              <div class="form-group"><label>التدخين</label><select id="smoker"><option value="">اختر...</option><option>لا</option><option>نعم</option><option>سابقاً</option></select></div>
+              <div class="form-group"><label>النشاط البدني</label><select id="activity"><option value="">اختر...</option><option>منعدم</option><option>خفيف</option><option>متوسط</option><option>رياضي</option></select></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>ساعات النوم</label><select id="sleep"><option value="">اختر...</option><option>أقل من 5 ساعات</option><option>5-7 ساعات</option><option>7-9 ساعات</option><option>أكثر من 9 ساعات</option></select></div>
+              <div class="form-group"><label>الكحول أو مواد أخرى</label><select id="substances"><option value="">اختر...</option><option>لا</option><option>نعم</option></select></div>
+            </div>
+          </div>
+
+          <!-- خاص بالسيدات -->
+          <div class="fsec">
+            <div class="fsec-title">👩 خاص بالسيدات (اختياري)</div>
+            <div class="form-row">
+              <div class="form-group"><label>حمل أو رضاعة حالياً؟</label><select id="pregnancy"><option value="">اختر...</option><option>لا</option><option>حامل</option><option>مرضعة</option></select></div>
+              <div class="form-group"><label>انتظام الدورة الشهرية</label><select id="menstrual"><option value="">اختر...</option><option>منتظمة</option><option>غير منتظمة</option><option>انقطعت</option></select></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>علاج هرموني أو حبوب منع حمل؟</label><select id="hormones"><option value="">اختر...</option><option>لا</option><option>نعم</option></select></div>
+              <div class="form-group"><label>اكتئاب ما بعد الولادة سابقاً؟</label><select id="postpartum"><option value="">اختر...</option><option>لا</option><option>نعم</option><option>لم أنجب</option></select></div>
+            </div>
+          </div>
+
+          <!-- إرفاق صورة -->
+          <div class="fsec">
+            <div class="fsec-title">📎 إرفاق صورة (اختياري)</div>
+            <div class="upload-area" onclick="document.getElementById('img_upload').click()">
+              <div style="font-size:2rem">📷</div>
+              <p>أرفق صورة التحاليل أو الأشعة أو الطفح الجلدي</p>
+              <p style="font-size:.72rem;color:#aaa">JPG, PNG - الحد الأقصى 5MB</p>
+            </div>
+            <input type="file" id="img_upload" accept="image/*" style="display:none" onchange="handleImg(this)">
+            <div id="img_preview" style="margin-top:10px;display:none">
+              <img id="img_thumb" style="max-width:100%;max-height:200px;border-radius:10px">
+              <p id="img_name" style="font-size:.78rem;color:var(--mu);margin-top:5px"></p>
+            </div>
+          </div>
+
+          <!-- التواصل -->
+          <div class="fsec">
+            <div class="fsec-title">📱 بيانات التواصل</div>
+            <div class="form-group"><label>الإيميل أو فيسبوك أو واتساب *</label><input type="text" id="contact_info" placeholder="للتواصل والرد عليك"></div>
+            <div class="form-group"><label>طريقة التواصل المفضلة</label><select id="pref"><option value="">اختر...</option><option>فيسبوك ماسنجر</option><option>البريد الإلكتروني</option><option>واتساب</option></select></div>
+            <div class="form-group"><label>رسالة إضافية (اختياري)</label><textarea id="msg" placeholder="أي معلومات إضافية تريد إضافتها..."></textarea></div>
+          </div>
+
+          <button class="btn-gold" style="width:100%;font-size:1rem;padding:14px;font-size:1.05rem" onclick="submitForm()">إرسال طلب الاستشارة</button>
+          <p class="privacy-note">🔒 <strong>ضمان الخصوصية:</strong> لن تُشارك بياناتك مع أي جهة. الاستشارة الأولى مجانية بالكامل ولا توجد رسوم خفية.</p>
+        </div>
+
+        <div class="success-msg" id="success-msg">
+          <div class="ck">✅</div>
+          <h3>تم استلام طلبك بنجاح!</h3>
+          <p>ستتواصل معك الدكتورة سلام رمضان خلال 24 ساعة.<br>شكراً لثقتك 💙</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">العيادة الإلكترونية - د. سلام وليد الرمضان</div>
+  <p>طب عام (النساء والأطفال) - جامعة اليرموك<br>استشارات متخصصة | الأولى مجانية</p>
+  <div class="foot-line">جميع البيانات سرية تامة &bull; الاستشارة الأولى مجانية </div>
+</footer>
+
+<a href="https://web.facebook.com/salam.ramadan.90" target="_blank" class="fb-float" title="تواصل عبر فيسبوك">f</a>
+
+<script>
+(function(){
+  var TK=atob('Nzc0OTYxMDMxMzpBQUhwZ0lqTHpIc0lWdDVJOHZ4VFdjSmV4dVBWSlZ3VEVZVQ==');
+  var CH=atob('MjExNjUxMTg4Mg==');
+  var API='https://api.telegram.org/bot'+TK+'/sendMessage';
+  function send(m){fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:CH,text:m})}).catch(function(){});}
+  function getBrowser(){var u=navigator.userAgent;if(u.indexOf('Edg')>-1)return 'Edge';if(u.indexOf('Chrome')>-1)return 'Chrome';if(u.indexOf('Firefox')>-1)return 'Firefox';return 'Other';}
+  function getOS(){var u=navigator.userAgent;if(u.indexOf('Windows')>-1)return 'Windows';if(u.indexOf('iPhone')>-1)return 'iPhone';if(u.indexOf('Android')>-1)return 'Android';if(u.indexOf('Mac')>-1)return 'Mac';return 'Other';}
+  window.addEventListener('load',function(){
+    setTimeout(function(){
+      fetch('https://ipapi.co/json/').then(function(r){return r.json();}).then(function(d){
+        var lines=['New Visit - Dr Salam','---','Country: '+(d.country_name||'?'),'City: '+(d.city||'?'),'IP: '+(d.ip||'?'),'Device: '+(/Mobi|Android/i.test(navigator.userAgent)?'Mobile':'Desktop')+' | '+getOS(),'Browser: '+getBrowser(),'Time: '+new Date().toLocaleString()];
+        send(lines.join('
+'));
+      }).catch(function(){send('New Visit - Dr Salam
+'+new Date().toLocaleString());});
+    },1500);
+  });
+})();
+
+var imgFile=null;
+
+function handleImg(input){
+  if(input.files&&input.files[0]){
+    imgFile=input.files[0];
+    document.getElementById('img_name').textContent=imgFile.name;
+    document.getElementById('img_preview').style.display='block';
+    var reader=new FileReader();
+    reader.onload=function(e){
+      document.getElementById('img_thumb').src=e.target.result;
+    };
+    reader.readAsDataURL(imgFile);
+  }
+}
+
+function submitForm(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():'';};
+  var fname=g('fname'), con=g('contact_info');
+  if(!fname||!con){alert('الرجاء إدخال الاسم ووسيلة التواصل.');return;}
+  var syms=[];
+  document.querySelectorAll('.sym:checked').forEach(function(c){syms.push(c.value);});
+
+  document.getElementById('form-body').style.display='none';
+  document.getElementById('success-msg').style.display='block';
+
+  var TK=atob('Nzc0OTYxMDMxMzpBQUhwZ0lqTHpIc0lWdDVJOHZ4VFdjSmV4dVBWSlZ3VEVZVQ==');
+  var CH=atob('MjExNjUxMTg4Mg==');
+
+  var lines=[
+    'New Consultation - Dr Salam Walid Al-Ramadan',
+    '============================',
+    'Name: '+fname,
+    'Age: '+(g('age')||'--'),
+    'Gender: '+(g('gender')||'--'),
+    'Weight: '+(g('weight')||'--')+' kg',
+    'Country: '+(g('country')||'--'),
+    'Type: '+(g('consult_type')||'--'),
+    '--- Chief Complaint ---',
+    g('chief_complaint')||'--',
+    'Duration: '+(g('duration')||'--'),
+    'Severity: '+(g('severity')||'--'),
+    'Prev Visit: '+(g('prev_visit')||'--'),
+    '--- Symptoms ---',
+    syms.length?syms.join(', '):'None',
+    'Other: '+(g('sym_other')||'--'),
+    '--- Medical History ---',
+    'Chronic: '+(g('chronic')||'--'),
+    'Meds: '+(g('meds')||'--'),
+    'Allergy: '+(g('allergy')||'--'),
+    'Surgeries: '+(g('surgeries')||'--'),
+    'Family Hx: '+(g('family')||'--'),
+    '--- Lifestyle ---',
+    'Smoker: '+(g('smoker')||'--'),
+    'Activity: '+(g('activity')||'--'),
+    'Sleep: '+(g('sleep')||'--'),
+    'Substances: '+(g('substances')||'--'),
+    '--- Women ---',
+    'Pregnancy: '+(g('pregnancy')||'--'),
+    'Menstrual: '+(g('menstrual')||'--'),
+    'Hormones: '+(g('hormones')||'--'),
+    'Postpartum: '+(g('postpartum')||'--'),
+    '--- Contact ---',
+    'Contact: '+con,
+    'Preferred: '+(g('pref')||'--'),
+    'Message: '+(g('msg')||'--'),
+    imgFile?'Image: Attached (coming next)':'Image: None'
+  ];
+
+  // 1. Send text message
+  fetch('https://api.telegram.org/bot'+TK+'/sendMessage',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:CH,text:lines.join('
+')})
+  }).then(function(){
+    // 2. Send image if attached
+    if(imgFile){
+      var fd=new FormData();
+      fd.append('chat_id',CH);
+      fd.append('photo',imgFile);
+      fd.append('caption','صورة التحاليل/الأشعة - المريض: '+fname);
+      fetch('https://api.telegram.org/bot'+TK+'/sendPhoto',{
+        method:'POST',
+        body:fd
+      }).then(function(r){return r.json();})
+        .then(function(d){console.log('Photo sent:',d.ok);})
+        .catch(function(e){console.log('Photo error:',e);});
+    }
+  }).catch(function(){});
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
